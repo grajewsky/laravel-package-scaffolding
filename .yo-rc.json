@@ -1,0 +1,9 @@
+{
+  "generator-node": {
+    "promptValues": {
+      "authorName": "Grajewsky",
+      "authorEmail": "grajewski.lukasz@wp.pl",
+      "authorUrl": "grajewsky.github.io"
+    }
+  }
+}
