@@ -1,5 +1,5 @@
 # generator-laravel-package-scaffolding [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url]
-> LAravel package scaffolding
+> Laravel package scaffolding
 
 ## Installation
 
