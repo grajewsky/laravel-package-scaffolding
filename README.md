@@ -5,10 +5,15 @@
 
 First, install [Yeoman](http://yeoman.io) and generator-laravel-package-scaffolding using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
+Localy
+
+```npm link```
+
 ```bash
 npm install -g yo
 npm install -g generator-laravel-package-scaffolding
 ```
+
 
 Then generate your new project:
 
