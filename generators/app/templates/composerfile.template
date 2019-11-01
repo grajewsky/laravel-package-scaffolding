@@ -21,7 +21,8 @@
         "src/helpers.php"
       ],
       "psr-4": {
-        "%namespace%\\": "src/"
+        "Test\\": "tests/"
+        "Lib\\": "src/"
       }
   },
   "extra": {

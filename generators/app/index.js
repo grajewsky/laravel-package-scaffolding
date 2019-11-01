@@ -5,7 +5,7 @@ const yosay = require('yosay');
 
 module.exports = class extends Generator {
 
-  prompting() {
+  async prompting() {
     // Have Yeoman greet the user.
     this.log(
       yosay(`Welcome to ${chalk.red('generator-laravel-package-scaffolding')} generator!`)
@@ -58,7 +58,7 @@ module.exports = class extends Generator {
 
   writing() {
     this.fs.copyTpl(
-      this.templatePath('templates/composerfile.template'),
+      this.templatePath('composerfile.template'),
       this.destinationPath('composer.json'),
       {
         author: this.props.name,
@@ -69,22 +69,37 @@ module.exports = class extends Generator {
         php_version: this.props.php_version,
       }
     );
-    this.fs.copy(
-      this.templatePath('files/helpers.php'),
-      this.destinationPath('src/helpers.php')
-    );
-    this.fs.copy(
-      this.templatePath('files/phpunit.xml'),
-      this.destinationPath('phpunit.xml')
+    this.fs.copyTpl(
+      this.templatePath('helpers.php.template'),
+      this.destinationPath('src/helpers.php'),
+      {
+        name: this.props.project_name
+      }
     );
     this.fs.copyTpl(
-      this.templatePath('templates/README.md'),
-      this.destinationPath('README.md'), {
-        name: this.props.name
+      this.templatePath('helpers.php.template'),
+      this.destinationPath('tests/Unit/GeneratePackageTest.php'),
+      {
+        name: this.props.project_name
       }
     );
     this.fs.copy(
-      this.templatePath('files/APACHE20-LICENSE'),
+      this.templatePath('phpunit.xml'),
+      this.destinationPath('phpunit.xml')
+    );
+    this.fs.copyTpl(
+      this.templatePath('README.md'),
+      this.destinationPath('README.md'), {
+        name: this.props.project_name
+      }
+    );
+    this.fs.copy(
+      this.templatePath('APACHE20-LICENSE'),
+      this.destinationPath('LICENSE')
+    );
+
+    this.fs.copy(
+      this.templatePath('APACHE20-LICENSE'),
       this.destinationPath('LICENSE')
     );
   }

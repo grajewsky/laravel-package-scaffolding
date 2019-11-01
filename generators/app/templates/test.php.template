@@ -1,0 +1,13 @@
+<?php
+namespace Test\Unit;
+
+use DirectoryIterator;
+
+class GeneratePackageTest extends \PHPUnit\Framework\TestCase {
+    public function testFilesExisting() {
+      $directoryIterator = new DirectoryIterator(<%=name%>_lib_path());
+      $files = ["composer.json", "phpunit.xml"];
+      foreach ($directoryIterator as $file) {
+        $this->assertTrue(in_array($file->getFilename(), $files));
+    }
+}
