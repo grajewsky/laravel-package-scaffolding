@@ -1,4 +1,4 @@
-# <%=name%>
+# <%= name %>
 
 ## Install
 ```> php composer.phar install ```

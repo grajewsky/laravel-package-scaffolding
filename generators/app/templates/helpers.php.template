@@ -1,8 +1,8 @@
 <?php
 
-if (!function_exists('<%=name%>_lib_path')) {
+if (!function_exists('<%= name %>_lib_path')) {
 
-    function <%=name%>_lib_path() {
+    function <%= name %>_lib_path() {
       return __DIR__;
     }
 }

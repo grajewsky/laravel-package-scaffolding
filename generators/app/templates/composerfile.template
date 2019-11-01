@@ -1,16 +1,16 @@
 {
-  "name": "<%=name%>",
-  "description": "<%=desc%>",
+  "name": "<%= name %>",
+  "description": "<%= desc %>",
   "type": "project",
-  "license": "<%=license%>",
+  "license": "<%= license %>",
   "authors": [
       {
-          "name": "<%=author%>",
-          "email": "<%=author_email%>"
+          "name": "<%= author %>",
+          "email": "<%= author_email %>"
       }
   ],
   "require": {
-      "php": "^<%=php_version%>"
+      "php": "^<%= php_version %>"
   },
   "require-dev": {
     "phpunit/phpunit": "^8",

@@ -11,7 +11,7 @@ module.exports = class extends Generator {
       yosay(`Welcome to ${chalk.red('generator-laravel-package-scaffolding')} generator!`)
     );
 
-    const prompts = await this.prompt([
+    this.props = await this.prompt([
       {
         type: "input",
         name: "name",
@@ -49,11 +49,6 @@ module.exports = class extends Generator {
         default: "Apache 2.0"
       },
     ]);
-
-    return this.prompt(prompts).then(props => {
-      // To access props later use this.props.someAnswer;
-      this.props = props;
-    });
   }
 
   writing() {
@@ -77,7 +72,7 @@ module.exports = class extends Generator {
       }
     );
     this.fs.copyTpl(
-      this.templatePath('helpers.php.template'),
+      this.templatePath('test.php.template'),
       this.destinationPath('tests/Unit/GeneratePackageTest.php'),
       {
         name: this.props.project_name
